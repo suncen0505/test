@@ -1,0 +1,41 @@
+ Cookie cookies[] = request.getCookies();
+	       System.out.println("Cookie长度:" + cookies.length);           //读取本机共存在多少COOKIE
+	       if (cookies != null) {
+	        for (int i = 0; i < cookies.length; i++) {
+	         if (cookies[i].getName().equals("UserName")) {
+	          System.out.println("UserName:"+Common.encodeStr(cookies[i].getValue()));
+	         }
+	         else if(cookies[i].getName().equals("PassWord"))
+	         {
+	        	 System.out.println("PassWorde:"+Common.encodeStr(cookies[i].getValue())); 	        	 
+	         }
+	        }
+	       } 
+
+
+<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+<h1>
+	Hello world!  
+</h1>
+
+<br/>
+<form name="form1" method="get" action="/test/Login">
+	用户名：<input id='UserName' name='UserName'> </input><br/>
+  
+	密码：<input id='PassWord' name='PassWord'></input><br/>
+  <input  type="submit" id="Login" value="登录" />
+</form>
+</body>
+
+</html>
+
+<script>
+
+
+</script>

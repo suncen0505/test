@@ -1,0 +1,7 @@
+INDEX VERSION 1.127
+F:\javatest\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3313761511.index
+\suncen-test\src\main\java
+F:\javatest\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\784592097.index
+\HelloWold\src\main\java
+F:\javatest\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1823557430.index
+\test\src\main\java
