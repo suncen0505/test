@@ -7,9 +7,13 @@
 <fullyQualifiedTypeName name="org.junit.runner.Request"/>
 <fullyQualifiedTypeName name="com.mysql.fabric.Response"/>
 <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
-<fullyQualifiedTypeName name="java.io.UnsupportedEncodingException"/>
 <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
 <fullyQualifiedTypeName name="java.net.URLDecoder"/>
+<fullyQualifiedTypeName name="net.rubyeye.xmemcached.MemcachedClient"/>
+<fullyQualifiedTypeName name="net.rubyeye.xmemcached.MemcachedClientBuilder"/>
+<fullyQualifiedTypeName name="net.rubyeye.xmemcached.XMemcachedClientBuilder"/>
+<fullyQualifiedTypeName name="net.rubyeye.xmemcached.utils.AddrUtil"/>
+<fullyQualifiedTypeName name="java.io.UnsupportedEncodingException"/>
 </qualifiedTypeNameHistroy>
