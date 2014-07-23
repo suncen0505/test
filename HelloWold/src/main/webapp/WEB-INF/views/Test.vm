@@ -1,6 +1,0 @@
-
-
-<select name="user">
-<option value="0">zhangsan</option>
-<option value="1">lisi</option>
-</select>
