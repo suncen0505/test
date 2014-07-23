@@ -1,0 +1,48 @@
+
+<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+<h1>
+	Hello world!  
+</h1>
+
+
+<select name="Game" id="Game">
+	#foreach($game in ${gamelist})
+	
+<option value="$game.code">$game.name</option>
+#end
+</select>
+
+<select name="servers" id="servers">
+</select>
+</body>
+</html>
+
+<script>
+
+jQuery(function(){
+		$("#Game").on("change",function(){
+			jQuery.ajax({
+				url:"/test/selectserver",
+				type:"get",
+				dataType: "json",
+				data:{gameId:$(this).val()},
+				success:function(data){
+					var html='';
+					html+='<option value="-1">请选择区服</option>'
+					for(var o in data){
+						html+='<option value="'+data[o]["code"]+'">'+data[o]["name"]+'</option>'
+					}
+					$("#servers").empty().html(html);
+				}			
+			})
+		});
+	});
+
+
+</script>

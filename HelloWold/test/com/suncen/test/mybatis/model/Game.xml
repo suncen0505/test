@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.suncen.test.mybatis.inter.IOperation">
+	
+	<resultMap type="Game" id="resultListGame">
+        <id column="Code" property="code" />
+        <result column="Name" property="name" />
+    </resultMap>
+
+    <select id="select"  resultMap="resultListGame">
+        select * from `suncen_game_tb`
+    </select>
+        <!-- <select id="selectbyid" parameterType="int" resultMap="resultListGame">
+        select * from `suncen_game_tb` where code= #{id}
+    </select> -->
+</mapper>
