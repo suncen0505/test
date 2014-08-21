@@ -1,0 +1,14 @@
+package com.suncen.test.mybatis.inter;
+
+
+import java.util.List;
+
+import com.suncen.test.mybatis.model.*;
+
+
+public interface IOperation {
+	public List<Game> select(); 
+	public List<GameServer> selectbyid(int GameId); 
+	public void insert(Game game);
+	public void update(Game game);
+}

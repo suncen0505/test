@@ -66,4 +66,35 @@ public class Test {
 		}
 		return gameserverlist;
 	}
+	
+	public static void AddGameInfo(int Code,String GameName)
+	{
+		Game game=new Game();
+		game.setName(GameName);
+		game.setCode(Code);
+		SqlSession session = getSession().openSession();
+		try {
+			IOperation Operation = session.getMapper(IOperation.class);
+			 Operation.insert(game);
+
+		} finally {
+			session.close();
+		}
+	}
+	
+	public static void UpdateGameInfo(int Code,String GameName)
+	{
+		Game game=new Game();
+		game.setName(GameName);
+		game.setCode(Code);
+		SqlSession session = getSession().openSession();
+		try {
+			
+			IOperation Operation = session.getMapper(IOperation.class);
+			 Operation.update(game);
+
+		} finally {
+			session.close();
+		}
+	}
 }

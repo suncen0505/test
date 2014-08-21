@@ -1,0 +1,16 @@
+package com.suncen.test;
+
+public class Memched {
+	 private static Singleton uniqueInstance = null;  
+	   
+	    private Memched() {  
+	       // Exists only to defeat instantiation.  
+	    }  
+	   
+	    public static Singleton getInstance() {  
+	       if (uniqueInstance == null) {  
+	           uniqueInstance = new Singleton();  
+	       }  
+	       return uniqueInstance;  
+	    }  
+}

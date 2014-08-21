@@ -1,0 +1,22 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import com.suncen.test.HomeController;
+
+
+public class JUnitTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testmemched()
+	{
+		HomeController  home=new HomeController();
+		
+	}
+
+}

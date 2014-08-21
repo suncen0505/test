@@ -1,0 +1,84 @@
+package com.suncen.test;
+
+import java.io.Reader;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import com.suncen.test.mybatis.inter.*;
+import com.suncen.test.mybatis.model.*;
+
+public class Test {
+	private static SqlSessionFactory sqlSessionFactory;
+
+	/*
+	 * static{ try{ reader = Resources.getResourceAsReader("Configuration.xml");
+	 * sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+	 * }catch(Exception e){ e.printStackTrace(); } }
+	 */
+
+	private static Object sysncObject = new Object();
+
+	public static SqlSessionFactory getSession() {
+		if (sqlSessionFactory == null) {
+			synchronized (sysncObject) {
+				if (sqlSessionFactory == null) {
+					try {
+						Reader reader = Resources
+								.getResourceAsReader("Configuration.xml");
+						sqlSessionFactory = new SqlSessionFactoryBuilder()
+								.build(reader);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+
+		return sqlSessionFactory;
+	}
+
+	public static List<Game> GetGamesList() {
+		List<Game> games = null;
+		SqlSession session = getSession().openSession();
+		try {
+			IOperation Operation = session.getMapper(IOperation.class);
+			games = Operation.select();
+
+		} finally {
+			session.close();
+		}
+		return games;
+	}
+	
+	public static List<GameServer> GetserverList(int id) {
+		List<GameServer> gameserverlist = null;
+		SqlSession session = getSession().openSession();
+		try {
+			IOperation Operation = session.getMapper(IOperation.class);
+			gameserverlist = Operation.selectbyid(id);
+
+		} finally {
+			session.close();
+		}
+		return gameserverlist;
+	}
+	
+	public static void AddGameInfo(int Code,String GameName)
+	{
+		Game game=new Game();
+		game.setName(GameName);
+		game.setCode(Code);
+		SqlSession session = getSession().openSession();
+		try {
+			IOperation Operation = session.getMapper(IOperation.class);
+			 Operation.insert(Code,GameName);
+
+		} finally {
+			session.close();
+		}
+	}
+}

@@ -1,7 +1,12 @@
 package com.suncen.test;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
+import java.util.concurrent.TimeoutException;
+
+import net.rubyeye.xmemcached.exception.MemcachedException;
+
 
 //import org.apache.ibatis.session.SqlSession;
 //import org.apache.ibatis.session.SqlSessionFactory;
@@ -14,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 //import org.springframework.web.servlet.ModelAndView;
+
+
 
 //import com.suncen.test.mybatis.inter.IOperation;
 import com.suncen.test.mybatis.model.Game;
@@ -44,6 +51,45 @@ public class HomeController {
 		return list;
 		
 	}
+	
+	/**
+	 * @RequestParam("gamename") String gamename
+	 * @throws IOException 
+	 * @throws MemcachedException 
+	 * @throws InterruptedException 
+	 * @throws TimeoutException 
+	 * **/
+	
+	@ResponseBody
+	@RequestMapping(value = "/addgameinfo", method = RequestMethod.GET)
+	public   void addgameinfo() throws TimeoutException, InterruptedException, MemcachedException, IOException
+	{
+		String gamename="测试你好";
+		int code=85;
+		Test.AddGameInfo(code,gamename);	
+		Memched.getInstance().set("key",3600,gamename);
+	}
+	
+	/**
+	 * @RequestParam("gamename") String gamename
+	 * @throws IOException 
+	 * @throws MemcachedException 
+	 * @throws InterruptedException 
+	 * @throws TimeoutException 
+	 * **/
+	
+	@ResponseBody
+	@RequestMapping(value = "/updategameinfo", method = RequestMethod.GET)
+	public   void updategameinfo() throws TimeoutException, InterruptedException, MemcachedException, IOException
+	{
+		String gamename="测试你好";
+		int code=1;
+		Test.UpdateGameInfo(code,gamename);		
+		 Object getSomeObject = Memched.getInstance().get("key");
+		 Memched.getInstance().delete("key");
+		 Memched.getInstance().set("key",3600,gamename);
+	}
+	
 	
 	
 }

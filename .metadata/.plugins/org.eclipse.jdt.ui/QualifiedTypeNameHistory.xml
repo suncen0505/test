@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="net.rubyeye.xmemcached.MemcachedClient"/>
+<fullyQualifiedTypeName name="net.rubyeye.xmemcached.XMemcachedClient"/>
+<fullyQualifiedTypeName name="com.suncen.test.HomeController"/>
+<fullyQualifiedTypeName name="junit.framework.Assert"/>
+<fullyQualifiedTypeName name="com.suncen.test.mybatis.model.Game"/>
+</qualifiedTypeNameHistroy>

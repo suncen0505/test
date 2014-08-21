@@ -1,0 +1,28 @@
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
+
+import net.rubyeye.xmemcached.exception.MemcachedException;
+
+import org.junit.Test;
+
+import com.suncen.test.HomeController;
+
+
+public class JUnitTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testmemched() throws TimeoutException, InterruptedException, MemcachedException, IOException
+	{
+		HomeController  homeclass=new HomeController();
+		homeclass.addgameinfo();
+		Assert.assertNotNull(u.getId()); 
+	}
+
+}

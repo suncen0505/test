@@ -1,0 +1,19 @@
+package com.suncen.test;
+
+import net.rubyeye.xmemcached.MemcachedClient;
+import net.rubyeye.xmemcached.XMemcachedClient;
+
+public class Memched {
+	private static MemcachedClient uniqueInstance = null; 
+	private static MemcachedClient client=new XMemcachedClient("host",11211);
+	    private Memched() {  
+	       // Exists only to defeat instantiation.  
+	    }  
+	   
+	    public static Memched getInstance() {  
+	       if (uniqueInstance == null) {  
+	           uniqueInstance = new Singleton();  
+	       }  
+	       return uniqueInstance;  
+	    }  
+}

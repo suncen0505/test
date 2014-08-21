@@ -1,0 +1,19 @@
+package com.suncen.test;
+
+import java.util.List;
+import java.util.Locale;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.suncen.test.mybatis.model.Game;
+
+public class MemchedController {
+
+	@RequestMapping(value = "/Memched", method = RequestMethod.GET)
+	public String Memched() {
+		
+	return "Memched";
+	}
+}

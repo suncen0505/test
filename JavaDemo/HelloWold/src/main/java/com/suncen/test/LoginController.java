@@ -74,7 +74,7 @@ public class LoginController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/LoginView", method = RequestMethod.GET)
 	public String LoginView(Locale locale, Model model) {
 		
 	return "LoginView";
@@ -117,6 +117,13 @@ public class LoginController {
 	      
 	       
 	       return modelAndView;		
+	}
+	
+	
+	@RequestMapping(value = "/MemchedView", method = RequestMethod.GET)
+	public String MemchedView(Locale locale, Model model) {
+		
+	return "MemchedView";
 	}
 }
 

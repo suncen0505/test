@@ -1,0 +1,10 @@
+package com.suncen.test;
+
+public class Memched {
+
+	public void test()
+	{
+		return "test";
+		
+	}
+}
